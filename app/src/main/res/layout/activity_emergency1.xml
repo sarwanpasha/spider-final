@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/d">
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="WELCOME TO SPIDER"
+        android:textSize="40dip"
+        android:gravity="center"
+        android:layout_marginTop="20dip"
+        android:textColor="#fffefefe" />
+
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Need help on current location"
+        android:textSize="20dip"
+        android:textColor="#21dbd4"
+        android:textStyle="bold"
+        android:id="@+id/btncurrent"
+        android:layout_marginTop="5dip"
+        android:background="#ff858585"/>
+
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Need help on default location"
+        android:textSize="20dip"
+        android:textColor="#21dbd4"
+        android:textStyle="bold"
+        android:id="@+id/btndefault"
+        android:layout_marginTop="20dip"
+        android:background="#ff858585"/>
+
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Need help on other address"
+        android:textSize="20dip"
+        android:textColor="#21dbd4"
+        android:textStyle="bold"
+        android:id="@+id/btnother"
+        android:layout_marginTop="20dip"
+        android:background="#ff858585"/>
+    <TextView
+        android:id="@+id/tvreceived"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnsend"
+        android:hint="Received" />
+    <Button android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textStyle="bold"
+        android:id="@+id/btnback1"
+        android:layout_marginTop="10dip"
+        android:background="#ff101010"
+        android:textColor="#ff9d9d9d" />
+
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">spider</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_emergency1">Emergency1</string>
+    <string name="title_activity_other_address">other_address</string>
+    <string name="title_activity_register">register</string>
+    <string name="title_activity_server">server</string>
+    <string name="title_activity_ambulence">Ambulence</string>
+    <string name="title_activity_signal">signal</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/f"
+    android:weightSum="1">
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="WELCOME TO SPIDER (Server)"
+        android:textSize="40dip"
+        android:gravity="center"
+        android:layout_marginTop="20dip"/>
+    <TextView
+        android:id="@+id/tvreceived"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnsend"
+        android:hint="Received"
+        android:layout_weight="0.33" />
+
+    <Button android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:text="Logout"
+        android:textSize="20dip"
+        android:textColor="#21dbd4"
+        android:textStyle="bold"
+        android:id="@+id/btnemergency"
+        android:layout_marginTop="280dip"/>
+
+</LinearLayout>
