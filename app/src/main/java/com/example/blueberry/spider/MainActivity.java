@@ -16,6 +16,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+
 
 public class MainActivity extends ActionBarActivity {
     Button btnLogin;
@@ -38,6 +41,9 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "BSsnrA9fZtQ6rRoXx8ppE7jQbkX9CgCn7JW993PB", "7VE81U3NyIMrAWrthh0MEvk6Iupv2qR0XejhKoec");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
         inputEmail = (EditText) findViewById(R.id.loginEmail);
         inputPassword = (EditText) findViewById(R.id.loginPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);

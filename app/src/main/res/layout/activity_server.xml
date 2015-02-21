@@ -29,7 +29,7 @@
         android:textSize="20dip"
         android:textColor="#21dbd4"
         android:textStyle="bold"
-        android:id="@+id/btnemergency"
+        android:id="@+id/btnlogout"
         android:layout_marginTop="280dip"/>
 
 </LinearLayout>

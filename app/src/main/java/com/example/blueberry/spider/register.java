@@ -14,6 +14,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseInstallation;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+import com.parse.SignUpCallback;
+
 
 public class register extends ActionBarActivity {
     Button btnRegister;
@@ -46,6 +53,7 @@ public class register extends ActionBarActivity {
         // Enable Local Datastore.
 //        Parse.enableLocalDatastore(this);
 //        Parse.initialize(this, "BSsnrA9fZtQ6rRoXx8ppE7jQbkX9CgCn7JW993PB", "7VE81U3NyIMrAWrthh0MEvk6Iupv2qR0XejhKoec");
+
         //SQLiteDatabase db = new DatabaseHandlerClass(this);
         // db.onCreate(null);
         // Importing all assets like buttons, text fields
@@ -69,6 +77,11 @@ public class register extends ActionBarActivity {
                 String name = inputFullName.getText().toString();
                 String email = inputEmail.getText().toString();
                 String password = inputPassword.getText().toString();
+                String city = inputFullName.getText().toString();
+                String area = inputEmail.getText().toString();
+                String street = inputPassword.getText().toString();
+                String house = inputFullName.getText().toString();
+                String cnic = inputEmail.getText().toString();
                 if(inputFullName.getText().toString().trim().length()==0||
                         inputEmail.getText().toString().trim().length()==0||
                         inputPassword.getText().toString().trim().length()==0)
@@ -83,6 +96,60 @@ public class register extends ActionBarActivity {
                         "','"+inputStreet.getText()+"','"+inputHouse.getText()+"','"+inputCnic.getText()+"');");
                 showMessage("Success", "Record added");
                 clearText();
+
+                //******************************Parse//**********************
+                // create the new user!
+                setProgressBarIndeterminateVisibility(true);
+                ParseUser data = new ParseUser();
+                data.put("objectId", "sarwan");
+                data.put("Full_Name", name);
+                data.put("createdAT", "Feb 19, 2015, 12:07");
+                data.put("updatedAT", "Feb 19, 2015, 12:07");
+                data.put("ACL", "Public Read and Write");
+                data.put("Email", email);
+                data.put("Password", password);
+                data.put("City", city);
+                data.put("Area", area);
+                data.put("Street_number", street);
+                data.put("House_Number", house);
+                data.put("CNIC",cnic);
+
+//                data.signUpInBackground(new SignUpCallback() {
+//                    @Override
+//                    public void done(ParseException e) {
+//                        setProgressBarIndeterminateVisibility(false);
+//                        if (e == null) {
+//                            // Success!
+//                            Intent intent = new Intent(register.this,MainActivity.class);
+//                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                            startActivity(intent);
+//                        } else {
+//                            AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+//                            builder.setMessage(e.getMessage()).setTitle(R.string.signup_error_title)
+//                                    .setPositiveButton(android.R.string.ok,
+//                                            null);
+//                            AlertDialog dialog = builder.create();
+//                            dialog.show();
+//                        }
+//                    }
+//                });
+                data.pinInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+//                            tcouples.getText().clear();
+//                            tchild.getText().clear();
+//                            tchild9.getText().clear();
+//                            tchild5.getText().clear();
+                            Toast.makeText(getApplicationContext(), "submitiing done", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "error occur in submission" + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                //******************************Parse//**********************
+
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
                 finish();

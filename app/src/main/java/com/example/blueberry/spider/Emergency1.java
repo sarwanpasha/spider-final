@@ -54,6 +54,8 @@ public class Emergency1 extends ActionBarActivity {
         }
 
     };
+    String Olat="33.645571500000000000";
+    String Olong="72.990344699999920000";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -247,36 +249,7 @@ public class Emergency1 extends ActionBarActivity {
         alertDialog.show();
 
     }
-    //    public void sendDefaulMessage(Cursor name,Cursor email,Cursor password,Cursor city,Cursor area,Cursor street,Cursor house,Cursor cnic)
-//    {
-//
-//
-//            String pinpoint = "http://www.maps.google.com/maps?q=" + lat + ","
-//                    + lon;
-//            String phonenumber="03239549789";
-//            String messages="I love you";
-//        try {
-//            SmsManager.getDefault().sendTextMessage(String.valueOf(phonenumber),
-//                    null, "City = "+name + "AREA =  "+area + "Steet Number = "+street+"House Number = "+house
-//                            + " ", null, null);
-//        } catch (Exception ex) {
-//            Log.d("SMS Error: ", ex.getMessage().toString());
-//        }
-//        Cursor c=db.rawQuery("SELECT * FROM student WHERE email='" + username + "'", null);
-//        if(c.getCount()==0){
-//            Toast.makeText(getBaseContext(), "Username = "+ username, Toast.LENGTH_SHORT).show();
-//            Toast.makeText(getBaseContext(), "No record found", Toast.LENGTH_SHORT).show();
-//        }
-//        else {
-//            StringBuffer buffer = new StringBuffer();
-//            while (c.moveToNext()) {
-//                buffer.append("name: " + c.getString(0) + "\n");
-//                buffer.append("email: " + c.getString(1) + "\n");
-//                buffer.append("password: " + c.getString(2) + "\n\n");
-//            }
-//            showMessage("Student Details", buffer.toString());
-//        }
-//    }
+
     public void SendSMS() {
 
         try {
@@ -292,8 +265,11 @@ public class Emergency1 extends ActionBarActivity {
             else{
                 Toast.makeText(getBaseContext(), "Can't get location  ", Toast.LENGTH_SHORT).show();
             }
-            String pinpoint = "http://www.maps.google.com/maps?q=" + lat + ","
-                    + lon;
+//            String pinpoint = "http://www.maps.google.com/maps?q=" + lat + ","
+//                    + lon;
+
+            String pinpoint = "http://www.maps.google.com/maps?q=" + Olat + ","
+                    + Olong;
             // String address = GetAddress(lat, lon);
             String phonenumber="03239549789";
             String messages=" ";
@@ -306,8 +282,8 @@ public class Emergency1 extends ActionBarActivity {
         } catch (Exception ex) {
             Log.d("SMS Error: ", ex.getMessage().toString());
         }
-        Toast.makeText(getBaseContext(), "Lattitude = "+lat, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getBaseContext(), "Lognitude = "+lon, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Lattitude = "+Olat, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Lognitude = "+Olong, Toast.LENGTH_SHORT).show();
         Toast.makeText(getBaseContext(), "Your Detail has been sended", Toast.LENGTH_SHORT).show();
 
 
